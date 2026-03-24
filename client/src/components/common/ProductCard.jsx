@@ -71,21 +71,6 @@ const ProductCard = ({ product }) => {
                     </div>
 
                     {/* Hover Actions */}
-                    <div className={`absolute inset-0 flex items-center justify-center gap-3 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
-                        <button
-                            className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-110"
-                            onClick={(e) => {
-                                e.preventDefault();
-                                e.stopPropagation();
-                                toast.success('Added to Wishlist!', {
-                                    icon: '❤️',
-                                    duration: 2000
-                                });
-                            }}
-                            title="Add to Wishlist"
-                        >
-                            <Heart size={20} className="text-gray-700 hover:text-red-500 hover:fill-red-500 transition" />
-                        </button>
                         <div
                             className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-110 cursor-pointer"
                             title="View Details"
