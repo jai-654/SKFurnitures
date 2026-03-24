@@ -140,11 +140,6 @@ const ProductCard = ({ product }) => {
                             <p className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-indigo-600 bg-clip-text text-transparent" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                                 ₹{product.price.toLocaleString()}
                             </p>
-                            {product.size && (
-                                <p className="text-xs text-gray-500 mt-1">
-                                    Size: {product.size.toUpperCase()}
-                                </p>
-                            )}
                         </div>
 
                         <button
