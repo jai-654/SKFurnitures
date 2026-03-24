@@ -71,6 +71,8 @@ const ProductCard = ({ product }) => {
                     </div>
 
                     {/* Hover Actions */}
+
+                    <div className={`absolute inset-0 flex items-center justify-center gap-3 transition-all duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`}>
                         <div
                             className="bg-white p-3 rounded-full shadow-lg hover:bg-gray-100 transition transform hover:scale-110 cursor-pointer"
                             title="View Details"
