@@ -20,7 +20,7 @@ const ChatWidget = () => {
         // Generate or retrieve session ID for guest users
         let sid = localStorage.getItem('chat_session_id');
         if (!sid) {
-            sid = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            sid = 'session_' + Date.now() + '_' + Math.random().toString(36).slice(2, 11);
             localStorage.setItem('chat_session_id', sid);
         }
         setSessionId(sid);

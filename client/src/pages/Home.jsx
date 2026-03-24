@@ -39,7 +39,7 @@ const Home = () => {
         },
         {
             icon: <Award className="text-warning" size={28} />,
-            title: '5 Year Warranty',
+            title: '2 Year Warranty',
             desc: 'Quality assured with comprehensive coverage'
         }
     ];

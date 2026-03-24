@@ -4,7 +4,6 @@ import Address from './Address.js';
 import Order from './Order.js';
 import Payment from './Payment.js';
 import Review from './Review.js';
-import ChatConversation from './ChatConversation.js';
 
 export {
     User,
@@ -12,6 +11,5 @@ export {
     Address,
     Order,
     Payment,
-    Review,
-    ChatConversation
+    Review
 };

@@ -62,22 +62,18 @@ function App() {
             <Navbar />
             <main className="pt-5">
                 <Routes>
-
                     <Route path="/" element={<Home />} />
                     <Route path="/products" element={<Products />} />
                     <Route path="/products/:id" element={<ProductDetail />} />
                     <Route path="/cart" element={<Cart />} />
                     <Route path="/location" element={<Location />} />
-
                     <Route path="/login/*" element={!isSignedIn ? <SignInPage /> : <Navigate to="/" />} />
                     <Route path="/register/*" element={!isSignedIn ? <SignUpPage /> : <Navigate to="/" />} />
-
                     <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
                     <Route path="/payment-success" element={<ProtectedRoute><PaymentSuccess /></ProtectedRoute>} />
                     <Route path="/payment-failed" element={<PaymentFailed />} />
                     <Route path="/orders" element={<ProtectedRoute><MyOrders /></ProtectedRoute>} />
                     <Route path="/orders/:id" element={<ProtectedRoute><OrderTracking /></ProtectedRoute>} />
-
                     <Route path="/admin" element={<ProtectedRoute role="admin"><AdminDashboard /></ProtectedRoute>} />
                     <Route path="/admin/products" element={<ProtectedRoute role="admin"><ManageProducts /></ProtectedRoute>} />
                     <Route path="/admin/orders" element={<ProtectedRoute role="admin"><ManageOrders /></ProtectedRoute>} />
@@ -87,7 +83,6 @@ function App() {
                 </Routes>
             </main>
 
-            {/* AI Shopping Assistant */}
             <ChatWidget />
         </div>
     );

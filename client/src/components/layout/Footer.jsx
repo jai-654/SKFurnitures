@@ -107,17 +107,17 @@ const Footer = () => {
                                         <Phone size={18} className="text-white" />
                                     </div>
                                     <span className="text-gray-900 hover:text-purple-600 transition-colors font-semibold text-sm">
-                                        +91 98765 43210
+                                        +91 97505 67100
                                     </span>
                                 </a>
                             </li>
                             <li className="group">
-                                <a href="mailto:info@skfurniture.com" className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300">
+                                <a href="mailto:skfurniture2024@gmail.com" className="flex items-center gap-3 p-3 rounded-lg bg-gray-50 hover:bg-gray-100 transition-all duration-300">
                                     <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center flex-shrink-0 shadow-lg">
                                         <Mail size={18} className="text-white" />
                                     </div>
                                     <span className="text-gray-900 hover:text-purple-600 transition-colors font-semibold text-sm break-all">
-                                        info@skfurniture.com
+                                        skfurniture2024@gmail.com
                                     </span>
                                 </a>
                             </li>

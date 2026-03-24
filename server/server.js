@@ -6,7 +6,6 @@ import cookieParser from 'cookie-parser';
 import 'dotenv/config';
 import { serve } from 'inngest/express';
 
-
 import connectDB from './config/db.js';
 import { inngest } from './config/inngest.js';
 import { functions } from './inngest/functions.js';
@@ -57,7 +56,6 @@ app.use((req, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
     console.log(`API: http://localhost:${PORT}/api`);
 });
 

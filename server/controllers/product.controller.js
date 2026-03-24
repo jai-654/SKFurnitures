@@ -4,7 +4,6 @@ export const getAllProducts = async (req, res) => {
     try {
         const { category, minPrice, maxPrice, size, search, sort = '-createdAt', page = 1, limit = 12 } = req.query;
 
-        // Build filter
         const filter = { isActive: true };
 
         if (category) filter.category = category;
@@ -21,7 +20,6 @@ export const getAllProducts = async (req, res) => {
             ];
         }
 
-        // Execute query with pagination
         const skip = (page - 1) * limit;
         const products = await Product.find(filter)
             .sort(sort)
@@ -53,7 +51,6 @@ export const getProductById = async (req, res) => {
             return res.status(404).json({ success: false, message: 'Product not found' });
         }
 
-        // Get reviews for this product
         const reviews = await Review.find({ product: req.params.id })
             .populate('user', 'name profileImage')
             .sort('-createdAt')
@@ -73,7 +70,6 @@ export const createProduct = async (req, res) => {
         const { name, description, price, category, stock, size } = req.body;
 
 
-        // Handle image uploads (files are already uploaded to Cloudinary via middleware)
         let imageUrls = [];
         if (req.files && req.files.length > 0) {
             imageUrls = req.files.map(file => file.path);
@@ -101,13 +97,11 @@ export const updateProduct = async (req, res) => {
     try {
         const { name, description, price, category, stock, size } = req.body;
 
-        // Find existing product
         const existingProduct = await Product.findById(req.params.id);
         if (!existingProduct) {
             return res.status(404).json({ success: false, message: 'Product not found' });
         }
 
-        // Handle image uploads (files are already uploaded to Cloudinary via middleware)
         let imageUrls = existingProduct.images || [];
         if (req.files && req.files.length > 0) {
             imageUrls = req.files.map(file => file.path);
@@ -141,7 +135,6 @@ export const deleteProduct = async (req, res) => {
             return res.status(404).json({ success: false, message: 'Product not found' });
         }
 
-        // Delete all reviews for this product
         await Review.deleteMany({ product: req.params.id });
 
         res.json({ success: true, message: 'Product deleted successfully' });
