@@ -98,9 +98,15 @@ const Analytics = () => {
         return date.toLocaleString('default', { month: 'short' });
     });
 
-    const monthlySales = last6Months.map((month, idx) => {
-        return Math.floor(Math.random() * 50000) + 20000; // Demo data - replace with real data
-    });
+    const monthlySales = last6Months.map((month) => {
+    return orders
+        .filter(order => {
+            const orderMonth = new Date(order.createdAt)
+                .toLocaleString('default', { month: 'short' });
+            return orderMonth === month;
+        })
+        .reduce((sum, order) => sum + (order.totalAmount || 0), 0);
+});
 
     const salesTrendData = {
         labels: last6Months,
@@ -252,7 +258,7 @@ const Analytics = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                     {/* Sales Trend Chart */}
                     <div className="bg-white rounded-xl p-6 shadow-md border border-gray-200">
-                        <h3 className="text-lg font-bold text-gray-900 mb-4">Revenue Trend (Last 6 Months)</h3>
+                        <h3 className="text-lg font-bold text-gray-900 mb-4">Revenue Trend (Last 3 Months)</h3>
                         <div className="h-80">
                             <Line data={salesTrendData} options={chartOptions} />
                         </div>
